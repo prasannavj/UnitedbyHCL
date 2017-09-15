@@ -1,0 +1,4 @@
+/**
+ * commbank-3-nimbus.js
+ * ff62d351f1ce71b34e0c103420a6f29f
+ */"use strict";!function(){function a(){return null!==document.getElementById("dspNav")||(null!==document.getElementById("cb3-footer")||(document.querySelectorAll(".commbank-primary-navigation-1-1").length>0||(document.querySelectorAll("a.button_primary[data-component=contextual-login]").length>0||document.querySelectorAll(".vote-component").length>0)))}function b(){for(var a=!1,b=0;b<document.styleSheets.length;b++){var c=document.styleSheets[b].href;if(null!==c){var d=c.match(/commbank-3\.css|clientlib-commbank3\.css/);if(null!==d){a=!0;break}}}return a}if(!b()&&a()){var c="/etc/designs/commbank-3/css/commbank-3-nimbus.css",d=document.getElementsByTagName("script"),e=d[d.length-1].src,f=e.match(/stylesheet=([^&]+)/);f&&f[1]&&(c=f[1]);var g=document.createElement("link");g.setAttribute("rel","stylesheet"),g.setAttribute("href",c),document.getElementsByTagName("head")[0].appendChild(g)}}();

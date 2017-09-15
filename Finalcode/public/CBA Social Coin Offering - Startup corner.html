@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>CBA Social Coin Offering - Startup Registration</title>
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>  
+        <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            font-size:15;
+        }
+
+        td, th {
+            font-family: arial, sans-serif;
+            font-size:15;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            font-family: arial, sans-serif;
+            font-size:15;
+            background-color: #f4b942;
+        }
+      </style>
+      
+  </head>
+  <body><img title="CBALogo" alt="cbalogo" src="./Shares and investments - CommBank_files/cba_mainlogo.gif"><br>
+      
+      <h2><b><strong><code><img title="CBALogo" alt="cbalogo" src="./Shares and investments - CommBank_files/startupcorner.png"></code>
+    <br>
+   
+      <!--    Investor details display start-->
+<script>
+      var messagesRef = new Firebase('https://cbacoinoffering.firebaseio.com/StartupRegistration');
+          // Update results when data is added
+
+        //messagesRef.limitToLast(10).on('child_added', function (snapshot) {
+        messagesRef.once("value").then(function(snapshot){
+           var tcount =0;
+            snapshot.forEach(function(childSnapshot) {
+        // key will be "ada" the first time and "alan" the second time
+        var key = childSnapshot.key;
+                // childData will be the actual contents of the child
+                    console.log("1");
+            console.log(key);
+        tcount +=1;
+        var childkey = childSnapshot.key;
+        var startupname1 = childSnapshot.child("startupName").val();
+        
+        var problemsolving = childSnapshot.child("problemsolving").val();
+        var solutionoverview = childSnapshot.child("solutionoverview").val();
+        var fundrequirement = childSnapshot.child("fundrequirement").val();
+        var WalletAddress = childSnapshot.child("walletaddress").val();
+                console.log("2");
+                console.log(startupname1);
+                console.log(childkey);
+                console.log(problemsolving);
+                console.log(solutionoverview);
+                console.log(fundrequirement);
+                console.log(WalletAddress);
+                
+                
+                var badge = document.createElement('div');
+                badge.className = 'badge';
+                badge.innerHTML=
+                 "<table><tr><td><b><code>&nbsp;&nbsp;Start Up &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</td><td>"+ tcount + "</td></tr></code></b><br>"+   
+                 "<b><tr><td><code>&nbsp;&nbsp;Startup Name&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<td>"+ startupname1 + "</td></tr></code></b><br>"+
+                "<b><tr><td><code>&nbsp;&nbsp;Problem Detail&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<td>"+ problemsolving + "</td></tr></code></b><br>"+
+                "<b><tr><td><code>&nbsp;&nbsp;Solution Overview&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <td>"+ solutionoverview + "</code></b><br>"+"<b><tr><td><code>&nbsp;&nbsp;Startup Wallet Address&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <td>"+ WalletAddress + "</code></b><br>"+
+                "<b></td></tr><code><tr><td><br> <b><button id=&nbsp;test&nbsp; Onclick=&nbsp;updateFirebase('"+WalletAddress+"')&nbsp; > View Balance</button></td></tr>";
+                document.getElementById('startupList').appendChild(badge);
+        
+            });
+            
+        });    
+        
+     
+     function updateFirebase(buttonclicked)
+     {
+         
+         //for the button clicked and the startup getting the funding.
+         
+         localStorage.setItem('startobject', buttonclicked);
+
+          console.log("local:"+ localStorage.getItem('startobject'));
+         
+          window.location.href = "CBA Social Coin Offering - BalanceViewofStartUp.html";
+         return false;
+     }
+      
+      </script>
+      
+      
+    <div id="startupList">
+
+    </div>
+      
+            </b></b></code></label><br>
+      <b><b></b></b></div>
+    <b><b> </b></b>
+  </body>
+</html>

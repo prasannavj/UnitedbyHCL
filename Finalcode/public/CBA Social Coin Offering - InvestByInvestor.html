@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>CBA Social Coin Offering - Startup Registration</title>
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="web3.min.js"> </script>
+
+      <script>
+      
+          $(document).ready(function(){
+            
+            console.log("locallocal secondfile" + localStorage.getItem("InvestStartup"));
+            $("#staname").text(localStorage.getItem("InvestStartup"));
+            
+        }); 
+          
+      </script>
+      
+       <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            font-size:15;
+        }
+
+        td, th {
+            font-family: arial, sans-serif;
+            font-size:15;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 4px;
+        }
+
+        tr:nth-child(even) {
+            font-family: arial, sans-serif;
+            font-size:15;
+            background-color: #f4b942;
+        }
+       
+</style>
+  </head>
+  <body><img title="CBALogo" alt="cbalogo" src="./Shares and investments - CommBank_files/cba_mainlogo.gif"><br>
+    
+    <br>
+    <br>
+    <h2><b><strong><code><img src="./Shares and investments - CommBank_files/transferfund.png"
+              alt=""></code></strong></b></h2>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp; <code>A New Asset class to Invest with New
+        Trust from CBA<br>
+      </code></h1>
+    <h1><br>
+    </h1>
+      <br>
+      <div>
+          
+        <table>
+            <tr>
+                <td>
+                Statup Name
+                
+                </td>
+                
+                <td>
+                
+                <p id="staname">startup name </p>
+                </td>
+                
+            </tr>  
+            <tr>
+                <td>
+              Transaction Currency
+                
+                </td>
+                
+                <td>
+                
+                <input type="text" id="tcurrency">
+                </td>
+                
+            </tr>  
+            <tr>
+                <td>
+              Allocate Fund
+                
+                </td>
+                
+                <td>
+                
+               <input type="text" id="ttransferedfund">
+                </td>
+                
+            </tr>  
+            <tr>
+                <td>
+              <button id="icostart" onclick="allocatefund()">Confirm Fund Transfer</button>
+                
+                </td>
+                
+                
+                
+            </tr>  
+            <tr>
+                <td>
+                    Transaction Status                
+                </td>
+                
+                <td>
+                
+                <P id="tstatus">Status</P>
+                </td>
+                
+            </tr>  
+          
+           
+          
+          
+        </table>
+<!--
+        Statup Name: <br>
+          <p id="staname">startup name </p>
+          
+-->
+<!--
+        Transaction Currency: <input type="text" id="tcurrency"> <br><br> 
+        Allocate Fund: <input type="text" id="ttransferedfund"> <br><br> 
+        <button id="icostart" onclick="allocatefund()">Confirm Fund Transfer</button>
+-->
+<!--
+          
+          Transaction Status:  <P id="tstatus">Status</P>   <br><br>
+          Allocated CBA Coins:  <P id="tcoin">Coin Allocated</P><br><br>
+          Investor Name: <p id="tname">Investor Name</p><br><br>
+          Investor Address: <p id="taddress">Investor Address</p><br><br>
+-->
+          
+      </div>
+      
+      
+      <!-- Prasanna Strat Firebase data extract -->
+ <script>
+     var testcontract;
+     web3 = new Web3(new Web3.providers.HttpProvider("http://cbacoifou.eastus.cloudapp.azure.com:8545"));
+     
+     
+     abi = JSON.parse('[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"totalSupply1","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"RATE","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimal","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"_totalsupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"createTokens","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}]');
+     
+     
+     
+      var messagesRef = new Firebase('https://cbacoinoffering.firebaseio.com/StartupRegistration');
+              
+     
+      testcontract = web3.eth.contract(abi);
+     
+     function getBalanceandDisplay()
+    {
+    console.log("i am inside sendtoken ")
+     
+      //web3.eth.defaultAccount = "0x2e9a77c5e72adafd771669c63c0b40d58b0de5e3";
+    // TEST2- investor 0x6588568c283dF4BD1fd20A7F10453d82b92A5bA0
+        web3.eth.defaultAccount =  "0x6588568c283dF4BD1fd20A7F10453d82b92A5bA0"
+    
+        console.log(web3.eth.defaultAccount);
+        
+        
+        //var test= testcontract.at("0xf1e02251188edf443743154ff445016344c1b684").balanceOf("0x8D1AC3a14Ad0f6577e16779D20132849487707c7");
+        
+        //CBACOinPlatform - contract address - 0x6a5ff331baf4e3f487c0a322f41b4a5967d2d43e
+        // Test2 contract address - 0x6588568c283dF4BD1fd20A7F10453d82b92A5bA0
+        
+       
+        
+        
+        //console.log("totalsupply " +testcontract.at("0x6a5ff331baf4e3f487c0a322f41b4a5967d2d43e").totalsupply());
+        
+        //create token.
+        testcontract.at("0x826911bdb532a44c6cfbc006328cdefbb0f29fd5").createTokens({value: web3.toWei(1, 'ether')},{from:"0x6588568c283dF4BD1fd20A7F10453d82b92A5bA0"},function(err,res){
+            if(err!="")
+            {
+            console.log(res);
+            }
+            else{
+                
+            console.log(err);
+                
+            }
+            
+        });
+        
+         //get balance:
+        //var newbal = //testcontract.at("0xf1e02251188edf443743154ff445016344c1b684").balanceOf("0x2e9a77c5e72adafd771669c63c0b40d58b0de5e3");
+        
+        //get the balance and display the detail on the application.
+       //var newbal = testcontract.at("0xf1e02251188edf443743154ff445016344c1b684").balanceOf("0x8D1AC3a14Ad0f6577e16779D20132849487707c7");
+        
+        //document.getElementById("tcoin").value = newbal;
+         var test= testcontract.at("0x826911bdb532a44c6cfbc006328cdefbb0f29fd5").balanceOf("0x8D1AC3a14Ad0f6577e16779D20132849487707c7");
+        //$("#tcoin").text(test);
+        $("#tstatus").text("Success");
+        console.log(test);
+        
+        
+        //get the ether balance.
+        
+        
+        var ethbalance = web3.fromWei(web3.eth.getBalance("0x8D1AC3a14Ad0f6577e16779D20132849487707c7")); 
+        console.log(ethbalance);
+        
+        
+        //web3.fromWei(eth.getBalance(eth.coinbase)); 
+        //console.log("newbal" + newbal);
+        
+        
+        
+    }
+     
+    function allocatefund()
+     {
+        console.log("locallocal secondfile" + localStorage.getItem("InvestStartup"));
+        
+         //update firebase with approval message:
+         
+         var tcurrency = document.getElementById("tcurrency");
+         var ttransferedfund = document.getElementById("ttransferedfund");
+         //var fundallocated = document.getElementById("fundallocated");
+         //var startdate = document.getElementById("startdate");
+         //var enddate = document.getElementById("enddate");
+         
+         //Update startup with funding.
+         messagesRef.orderByChild("startupName").equalTo(localStorage.getItem("InvestStartup")).once("child_added").then(function(snapshot){
+              //console.log(snapshot.children);  
+              console.log(snapshot.key());  
+              //messagesRef.childorderByKey.key().update({"cbaapproved":"True"});({"cbaapproved":"True"});
+             
+              messagesRef.child(snapshot.key()).update(
+                  {"fundingcolected":ttransferedfund.value                   
+                  });
+          });
+         
+         
+         var messagesRefInvestor = new Firebase('https://cbacoinoffering.firebaseio.com/Investor');
+          //Update startup with funding.
+         messagesRefInvestor.orderByChild("Investorname").equalTo("HCL").once("child_added").then(function(snapshot){
+              //console.log(snapshot.children);  
+              console.log(snapshot.key());  
+              //messagesRef.childorderByKey.key().update({"cbaapproved":"True"});({"cbaapproved":"True"});
+             
+              messagesRefInvestor.child(snapshot.key()).update(
+                  {"Startupname":localStorage.getItem("InvestStartup"),
+                   "amountinvested":ttransferedfund.value,
+                   "investedcurrency":tcurrency.value,
+                   "CBACoinreceivedfromInvestment":0
+                  });
+          });
+         
+         
+         //Update investor with the transaction detail.
+         
+         
+         
+         alert("ICO StartUp Investment Successful:"+ localStorage.getItem("InvestStartup"));
+            //localStorage.setItem("InvestStartup",0);
+         
+         getBalanceandDisplay();
+     }
+     
+      </script>
+      
+      
+  </body>
+</html>

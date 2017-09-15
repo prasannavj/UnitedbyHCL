@@ -1,0 +1,4 @@
+/*!*
+ * require-config.js
+ * cdd07d92b29a19a5303a3a0cacfc3011
+*/"use strict";var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&"function"==typeof Symbol&&a.constructor===Symbol?"symbol":typeof a};requirejs.config(Commbank.config),"function"==typeof $&&define("jquery",function(){return $}),"object"===("undefined"==typeof enquire?"undefined":_typeof(enquire))&&define("enquire",function(){return enquire}),requirejs([],function(){if("undefined"!=typeof Commbank){if("undefined"!=typeof Commbank.modules)for(var a=0;a<Commbank.modules.length;a++)"function"==typeof Commbank.modules[a]&&Commbank.modules[a]();if("undefined"!=typeof Commbank.modObjs)for(var b in Commbank.modObjs)"undefined"!==b&&"function"==typeof Commbank.modObjs[b]&&Commbank.modObjs.hasOwnProperty(b)&&Commbank.modObjs[b]()}});

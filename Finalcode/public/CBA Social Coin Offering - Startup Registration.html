@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>CBA Social Coin Offering - Startup Registration</title>
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>  
+        
+      <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            font-size:15;
+        }
+
+        td, th {
+            font-family: arial, sans-serif;
+            font-size:15;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 4px;
+        }
+
+        tr:nth-child(even) {
+            font-family: arial, sans-serif;
+            font-size:15;
+            background-color: #f4b942;
+        }
+       
+</style>
+      
+  </head>
+  <body> <img title="CBALogo" alt="cbalogo" src="./Shares and investments - CommBank_files/cba_mainlogo.gif"><br>
+    <br>
+    <br>
+    <h2><b><strong>&nbsp;&nbsp;&nbsp; <u>Start Up Registration:</u></strong></b></h2>
+    <br>
+    <br>
+      <table>
+     
+          
+          <tr>
+              <td>
+                Startup Name
+          
+              </td>  
+               <td>
+          <textarea id="sname" name="startupnametext"></textarea>
+              </td>  
+              </tr>  
+                <tr>
+              <td>
+              Business Overview
+              
+              </td>
+              <td>
+              <textarea id="boverview"rows="5" name="startupnametext" wrap="soft">
+              
+                  </textarea>
+              </td>
+                  
+                </tr>  
+                <tr>
+              
+              <td>
+              Problem Solving
+              
+              </td>
+              <td>
+              <textarea id="psolving" rows="5" name="startupnametext"
+wrap="soft"></textarea>
+              
+              </td>
+              </tr>  
+                <tr>
+              <td>
+              Solution
+        Overview
+              
+              </td>
+              <td>
+              <textarea id="soverview" rows="5" name="startupnametext"
+wrap="soft"></textarea>
+              
+              </td>
+              </tr>  
+                <tr>
+              <td>
+              
+              Market &amp;
+        Segment
+              </td>
+              <td>
+              <textarea id="segment"rows="5" name="startupnametext"
+wrap="soft"></textarea>
+              
+              </td>
+              </tr>  
+                <tr>
+              <td>
+              Business Model
+              
+              </td>
+              <td>
+              <textarea id="bmodel"
+rows="5"
+name="startupnametext"
+wrap="soft"></textarea>
+              
+              </td>
+              </tr>  
+                <tr>
+              <td>
+              Competitive
+        Landscape
+              
+              </td>
+              <td>
+              <textarea id="clandscape" rows="5" name="startupnametext" wrap="soft"></textarea>
+              
+              </td>
+              </tr>  
+                <tr>
+              <td>
+              
+              Current State
+              </td>
+              <td>
+              <textarea id="cstate" rows="5" name="startupnametext" wrap="soft"></textarea>
+              
+              </td>
+            </tr>  
+                <tr>
+                    <td>
+                    
+                    Funding
+        Requirement
+                    </td>
+                    <td>
+                    <textarea id="frequirement" rows="5" name="startupnametext"
+wrap="soft"></textarea>
+                    </td>
+                </tr>
+          
+            <tr>
+                    <td>
+                    
+                    Exit Criteria
+                    </td>
+                    <td>
+                    <textarea id="ecriteria" rows="5" name="startupnametext"
+wrap="soft"></textarea>
+                    </td>
+                </tr>
+          
+            <tr>
+                    <td>
+                    Contact Email ID
+                    
+                    </td>
+                    <td>
+                    <textarea id="emailid" rows="5" name="startupnametext"
+wrap="soft"></textarea>
+                    </td>
+                </tr>
+          
+                    
+          
+        
+      
+      </table>
+             
+<!--
+      
+    <div style="text-align: justify;"> <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Startup
+          Name:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</b> &nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp; <textarea id="sname" name="startupnametext"></textarea></label></div>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>:</b> &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <textarea id="boverview"rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Problem Solving:</b>
+      &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; <textarea id="psolving" rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Solution
+        Overview:</b> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <textarea id="soverview" rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Market &amp;
+        Segment: </b> &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; <textarea id="segment"rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Business Model:</b>
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <textarea id="bmodel"
+rows="5"
+name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Competitive
+        Landscape:&nbsp;&nbsp;</b> <textarea id="clandscape" rows="5" name="startupnametext" wrap="soft"></textarea></label><br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Current State:
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</b>
+      &nbsp;&nbsp;&nbsp; <textarea id="cstate" rows="5" name="startupnametext" wrap="soft"></textarea></label><br>
+    <br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Funding
+        Requirement: </b> &nbsp;&nbsp;&nbsp; <textarea id="frequirement" rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <br>
+    <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Exit Criteria
+        &amp; Strategy: </b> &nbsp;&nbsp;&nbsp; <textarea id="ecriteria" rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+    <br>
+    <br>
+      <b>&nbsp;&nbsp;&nbsp; </b><label form="startupregister"><b>Contact Email ID:
+         </b> &nbsp;&nbsp;&nbsp; <textarea id="emailid" rows="5" name="startupnametext"
+wrap="soft"></textarea></label><br>
+-->
+    <br>
+    <br>
+    <div style="margin-left: 120px;"> &nbsp;&nbsp;&nbsp; <button id="submit" formmethod="get"
+        formaction="Submit"
+        formtarget="_blank"
+        formenctype="text/plain"
+        type="submit"
+        form="Submit Form"
+        value="SubmitForm"
+        name="SubmitForm"
+        onclick="savedata()">Submit
+        Registration</button>
+    <button formmethod="get" formaction="Cancel"
+        formtarget="_blank"
+        formenctype="text/plain"
+        type="submit"
+        form="Cancel Form"
+        value="CancelForm"
+        name="cancelform">Clear
+        </button></div>
+      
+      <script>
+    var messagesRef = new Firebase('https://cbacoinoffering.firebaseio.com/StartupRegistration');
+    
+    var sname = document.getElementById('sname');
+    var boverview = document.getElementById('boverview');
+    var psolving = document.getElementById('psolving');
+    var soverview = document.getElementById('soverview');
+    var segment = document.getElementById('segment');
+    var bmodel = document.getElementById('bmodel');
+    var clandscape = document.getElementById('clandscape');
+    var cstate = document.getElementById('cstate');
+    var frequirement = document.getElementById('frequirement');
+    var ecriteria = document.getElementById('ecriteria');
+    var emailid = document.getElementById('emailid');
+    
+
+    // Save data to firebase
+    function savedata(){
+      
+    console.log("entered");
+      messagesRef.push({"startupName":sname.value,
+                        businessOverview:boverview.value,
+                        problemsolving:psolving.value,
+                        solutionoverview:soverview.value,
+                        Segment:segment.value,
+                        businessmodel:bmodel.value,
+                        competition:clandscape.value,
+                        currentstate:cstate.value,
+                        fundrequirement:frequirement.value,
+                        exitcriteria:ecriteria.value,
+                        emailid:emailid.value,
+                        cbaapproved:"false",
+                        approvedforfunding:"fasle",
+                        fundingallocated:0,
+                        fundingcolected:0,
+                        offeringstartdate:"0",
+                        offeringenddate:"0",
+                        percentatgeallocated:"0",
+                        walletaddress:"0"
+                       });
+      alert("Startup Registration Successful. You will receive an email with further detail.");
+        
+        sname.value = '';
+        boverview.value = '';
+        psolving.value = '';
+        soverview.value ='';
+        segment.value = '';
+        bmodel.value = '';
+        emailid.value = '';
+        clandscape.value = '';
+        cstate.value = '';
+        frequirement.value = '';
+        ecriteria.value = '';
+    }
+          
+          
+          
+    </script>
+  </body>
+</html>

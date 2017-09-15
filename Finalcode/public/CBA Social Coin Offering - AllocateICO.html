@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>CBA Social Coin Offering - Startup Registration</title>
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+      
+          $(document).ready(function(){
+            
+            console.log("locallocal secondfile" + localStorage.getItem("testObject"));
+            $("#staname").text(localStorage.getItem("testObject"));
+            
+        }); 
+          
+          
+          
+     
+      </script>
+      <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            font-size:15;
+        }
+
+        td, th {
+            font-family: arial, sans-serif;
+            font-size:15;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 4px;
+        }
+
+        tr:nth-child(even) {
+            font-family: arial, sans-serif;
+            font-size:15;
+            background-color: #f4b942;
+        }
+       
+</style>
+      
+  </head>
+  <body><img title="CBALogo" alt="cbalogo" src="./Shares and investments - CommBank_files/cba_mainlogo.gif"><br>
+    
+    
+      
+    <br>
+    <br>
+    <h2><b><strong><code><img src="./Shares and investments - CommBank_files/allocateICO.png"
+              alt=""></code></strong></b></h2>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp; <code>A New Asset class to Invest with New
+        Trust from CBA<br>
+      </code></h1>
+    <h1><br>
+    </h1>
+      <br>
+      <div>
+          
+          <table>
+            <tr>
+                <td>
+                Statup Name
+                </td>  
+                <td>
+                 <p id="staname">startup name </p>
+                </td>  
+            </tr>
+              
+              <tr>
+                <td>
+                Allocated Coins
+                </td>  
+                <td>
+                 <input type="text" id="fundallocated">
+                </td>  
+            </tr>
+              
+              <tr>
+                <td>
+                ICO Start Date
+                </td>  
+                <td>
+                 <input type="text" id="startdate">
+                </td>  
+            </tr>
+              
+              <tr>
+                <td>
+                ICO End Date
+                </td>  
+                <td>
+                 <input type="text" id="enddate"> 
+                </td>  
+            </tr>
+              
+              <tr>
+                <td>
+                <button id="icostart" onclick="allocatefund()">Approve ICO</button>
+                </td>  
+            </tr>
+          
+          </table>
+          
+          
+<!--
+          
+        Statup Name: <br>
+          <p id="staname">startup name </p>
+          <br>
+-->
+          
+<!--
+        Allocated Coins: <input type="text" id="fundallocated"> <br><br> 
+        ICO Start Date:  <input type="text" id="startdate">  <br><br>
+          ICO End Date:  <input type="text" id="enddate">  <br><br>
+        <button id="icostart" onclick="allocatefund()">Approve ICO</button>
+      </div>
+-->
+      
+      
+      <!-- Prasanna Strat Firebase data extract -->
+ <script>
+      var messagesRef = new Firebase('https://cbacoinoffering.firebaseio.com/StartupRegistration');
+              
+     
+     
+    function allocatefund()
+     {
+        console.log("locallocal secondfile" + localStorage.getItem("testObject"));
+        
+         //update firebase with approval message:
+         
+         var fundallocated = document.getElementById("fundallocated");
+         var startdate = document.getElementById("startdate");
+         var enddate = document.getElementById("enddate");
+         
+         
+         messagesRef.orderByChild("startupName").equalTo(localStorage.getItem("testObject")).once("child_added").then(function(snapshot){
+              //console.log(snapshot.children);  
+              console.log(snapshot.key());  
+              //messagesRef.childorderByKey.key().update({"cbaapproved":"True"});({"cbaapproved":"True"});
+              messagesRef.child(snapshot.key()).update(
+                  {"cbaapproved":"True",
+                   "fundingallocated":fundallocated.value,
+                   "offeringstartdate":startdate.value,
+                   "offeringenddate":enddate.value
+                  });
+          });
+         alert("ICO Approved for startup:"+ localStorage.getItem("testObject"));
+            localStorage.setItem("testObject",0);
+         
+         
+         
+         
+     }
+     
+     
+      
+      </script>
+      
+      
+  </body>
+</html>

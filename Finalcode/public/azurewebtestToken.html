@@ -1,0 +1,93 @@
+<html>
+
+<head>
+        <!-- <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script> -->
+    <script src="web3.min.js"> </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+    
+    <script>
+   
+    web3 = new Web3(new Web3.providers.HttpProvider("http://cbacoifou.eastus.cloudapp.azure.com:8545"));
+    //web3.eth.defaultAccount = web3.eth.coinbase;
+//    abi = JSON.parse('[{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"balances","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"transfer","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]');
+//        
+        
+        abi = JSON.parse('[{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"RATE","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimal","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"_totalsupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"createTokens","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}]');
+        
+    testcontract = web3.eth.contract(abi);
+    //web3.eth.defaultAccount = web3.eth.coinbase;
+    //web3.eth.defaultAccount = web3.personal.unlockAccount(web3.eth.coinbase,"12345678",0);""
+    //web3.eth.defaultAccount = web3.personal.unlockAccount("0xf5fbcb106b02402215d283afc807f91acd87c766",12345,0);
+     //"0xf5fbcb106b02402215d283afc807f91acd87c766"
+    //web3.eth.defaultAccount = web3.eth.coinbase;
+    
+    
+    //var contractinstance.createTokens({value: web3.toWei(2, 'ether')});
+    function sendtoken()
+    {
+    console.log("i am inside sendtoken ")
+//    contractinstance.createTokens("0xf1e02251188edf443743154ff445016344c1b684",100000000000000000,function(err,res){
+//                            if (err!=null)  
+//                            {
+//                                alert(err);    
+//                            }
+//                            else{
+//                                console.log(res);
+//                                 alert("transfer done");
+//                            }
+//                            
+//                              });
+//    
+    
+    
+    final = web3.personal.getListAccounts(function(err,res){
+        console.log(res[0]);
+        
+        web3.eth.defaultAccount =  res[0];
+        console.log(web3.eth.defaultAccount);
+    });
+        
+    
+    console.log(final);
+
+        
+    //web3.eth.defaultAccount = web3.personal.account
+        console.log(web3.eth.defaultAccount);
+    //var contractinstance = testcontract.at("0xf1e02251188edf443743154ff445016344c1b684");
+    
+        testcontract.at("0xf1e02251188edf443743154ff445016344c1b684").createTokens({value: web3.toWei(2, 'ether')},{from: web3.eth.defaultAccount});
+        
+        
+//        ,function(err,res){
+//                            if (err!=null)  
+//                            {
+//                                alert(err);    
+//                            }
+//                            else{
+//                                console.log(res);
+//                                 alert("transfer done");
+//                            }
+//                            
+//                              });
+//    
+    
+    
+    }
+   
+
+</script>
+
+</head>
+
+
+<body>
+        <h1> this is great </h1>
+    <button id="contracttransfer" onclick="sendtoken()">Send </button>
+    
+    
+      
+</body>
+    
+  
+</html>

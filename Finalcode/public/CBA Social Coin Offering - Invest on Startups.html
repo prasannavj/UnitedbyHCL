@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>CBA Social Coin Offering - Startup Registration</title>
+      <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>  
+      
+       <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            font-size:15;
+        }
+
+        td, th {
+            font-family: arial, sans-serif;
+            font-size:15;
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            font-family: arial, sans-serif;
+            font-size:15;
+            background-color: #f4b942;
+        }
+       
+</style>
+      
+  </head>
+  <body><img title="CBALogo" alt="cbalogo" src="./Shares and investments - CommBank_files/cba_mainlogo.gif"><br>
+    
+    
+      
+    <br>
+    <br>
+    <h2><b><strong><code><img src="data:image/png;base64,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"
+              alt=""></code></strong></b></h2>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp; <code>A New Asset class to Invest with New
+        Trust from CBA<br>
+      </code></h1>
+    <h1><br>
+    </h1>
+    
+<!-- Prasanna Strat Firebase data extract -->
+ <script>
+      var messagesRef = new Firebase('https://cbacoinoffering.firebaseio.com/StartupRegistration');
+          // Update results when data is added
+
+        //messagesRef.limitToLast(10).on('child_added', function (snapshot) {
+        
+     messagesRef.orderByChild("cbaapproved").equalTo("True").once("value").then(function(snapshot){
+        //messagesRef.once("value").then(function(snapshot){
+           var tcount =0;
+            snapshot.forEach(function(childSnapshot) {
+        // key will be "ada" the first time and "alan" the second time
+        var key = childSnapshot.key;
+                // childData will be the actual contents of the child
+                    console.log("1");
+            console.log(key);
+        tcount +=1;
+        var childkey = childSnapshot.key;
+        var startupname = childSnapshot.child("startupName").val();
+        
+        var problemsolving = childSnapshot.child("problemsolving").val();
+        var solutionoverview = childSnapshot.child("solutionoverview").val();
+        var fundrequirement = childSnapshot.child("fundrequirement").val();
+        
+                console.log("2");
+                console.log(startupname);
+                console.log(childkey);
+                console.log(problemsolving);
+                console.log(solutionoverview);
+                console.log(fundrequirement);
+                startupList
+                
+                var badge = document.createElement('div');
+                badge.className = 'badge';
+                badge.innerHTML=
+                 "<table><tr><td><b><code>&nbsp;&nbsp;Start up &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>"+ tcount + "</td></tr></code></b><br>"+   
+                 "<b><tr><td><code>&nbsp;&nbsp;Startup Name&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>"+ startupname + "</td></tr></code></b><br>"+
+                "<b><tr><td><code>&nbsp;&nbsp;Problem Detail&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>"+ problemsolving + "</td></tr></code></b><br>"+
+                "<b><tr><td><code>&nbsp;&nbsp;Solution Overview&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>"+ solutionoverview + "</td></tr></code></b><br>"+
+                "<b><tr><td><code>&nbsp;&nbsp;Funding Required&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>"+ fundrequirement + "</td></tr></code></b><br> <tr><td><b><button onclick=&nbsp;updateFirebase('"+startupname+"')&nbsp; id="+tcount+"> <img title=&nbsp;invest&nbsp; src=&nbsp;&nbsp;./Shares and investments CommBank_files/investinthisstartup.png&nbsp;&nbsp;></button> </td></tr></code></b><br> "
+                document.getElementById('startupList').appendChild(badge);
+                    
+                
+                
+            });
+            
+            
+//            console.log("3");
+//            console.log(value);
+//            
+        });    
+        //var data = snapshot.val();
+        
+        //console.log(snapshot.val());   
+        //console.log(snapshot.key);
+//      
+//        if (message != undefined)
+//        {
+//          messageResults.value += '\n' + message;
+//        }
+//    });
+      
+     
+     
+      function updateFirebase(buttonclicked)
+     {
+         
+         //for the button clicked and the startup getting the funding.
+         
+         localStorage.setItem('InvestStartup', buttonclicked);
+
+          console.log("local:"+ localStorage.getItem('InvestStartup'));
+         
+          window.location.href = "CBA Social Coin Offering - InvestByInvestor.html";
+         
+     }
+      
+      </script>
+      
+      
+    <div id="startupList">
+
+    </div>
+
+     
+        <b><b> </b></b><label form="startupregister"><code><b><b><br>
+              </b></b></code></label></div>
+      <b><b> </b></b></div>
+    <b><b> </b></b>
+  </body>
+</html>
